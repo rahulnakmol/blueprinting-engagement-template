@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "version": 1,
+  "requires": 1,
+  "files": [
+    "templates/opportunity.md", "templates/rfp.md", "templates/workshop.md",
+    "templates/functional-design.md", "templates/decision.md", "templates/handover.md",
+    "templates/debrief.md", "templates/closeout.md",
+    "views/Working-notes.base", "views/Retained-index.base", "navigation/Start-here.md"
+  ]
+}

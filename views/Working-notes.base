@@ -1,0 +1,38 @@
+filters:
+  and:
+    - 'file.inFolder("notes")'
+    - 'file.ext == "md"'
+properties:
+  note.owner:
+    displayName: Accountable role
+  note.status:
+    displayName: Working status
+  note.disposition:
+    displayName: Requested response
+  note.due:
+    displayName: Agreed date
+views:
+  - type: table
+    name: Open work
+    filters:
+      and:
+        - 'note.status != "closed"'
+    order:
+      - file.name
+      - note.kind
+      - note.disposition
+      - note.owner
+      - note.status
+      - note.due
+    columnSize:
+      note.kind: 160
+  - type: table
+    name: All working notes
+    order:
+      - file.name
+      - note.kind
+      - note.owner
+      - note.status
+      - note.due
+    columnSize:
+      note.kind: 160

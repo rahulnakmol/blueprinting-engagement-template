@@ -1,0 +1,14 @@
+filters:
+  and:
+    - 'file.inFolder("Indexes/records")'
+    - 'note.derived == true'
+properties:
+  note.revision_state:
+    displayName: Revision state — not approval
+views:
+  - type: table
+    name: Derived navigation only
+    order:
+      - file.name
+      - note.kind
+      - note.revision_state
