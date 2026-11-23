@@ -21,6 +21,7 @@ Name the action and accountable role; retain the original age of open decisions.
 
 ## Next response and lessons
 State due responses under the agreed working calendar and zone. Report failed/uncertain saves
-and missed checks honestly. Retain full notes locally; publish only permitted summaries and
-complete debriefs to the configured Notion destination after the required review.
+and missed checks honestly. This vault is the complete record; keep full notes and debriefs here.
+If a Notion destination is separately configured, publish only permitted summaries and complete
+debriefs to it after the required review.
 Generalized lessons need contextual and permission review before cross-engagement reuse.

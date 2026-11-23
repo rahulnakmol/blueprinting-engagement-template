@@ -1,11 +1,25 @@
 # Blueprinting engagement template
 
-**Local development draft. Not a qualified or published consulting system.**
+**Public reusable template, licensed under GPL-3.0. Never commit client material to this repository.**
 
-A selectable working vault for one opportunity or engagement. Use it with Blueprinting's
+A selectable working vault for one opportunity or engagement. The vault is the engagement's
+complete record: evidence, working notes, decisions, debriefs and handoffs live in its Markdown
+files and Git history. Notion is not required. Connect it only if you separately choose and
+authorize it for cross-engagement summaries. Use it with Blueprinting's
 shared helper contract 1. No client data, external integrations, community plugins, approval
 receipts or brand assets are bundled. Create a separate private Git repository per engagement;
 configure its backup and access explicitly. Never use this reusable source repository for clients.
+
+Clone this repository onto the machine running the engagement thread, then give Blueprinting
+that clone's absolute path. Pin a commit for each engagement so its active bundle is reproducible:
+
+```sh
+git clone https://github.com/rahulnakmol/blueprinting-engagement-template.git
+```
+
+Each engagement vault is a separate private repository, not a fork of this public one. A GitHub
+fork of a public repository is public. GPL-3.0 conditions apply when you convey this template or
+a modified version; take legal advice before relying on how they apply to a client deliverable.
 
 ## Start with the next decision
 
