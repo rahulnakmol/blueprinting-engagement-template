@@ -1,9 +1,17 @@
 ---
 kind: debrief
 status: open
-disposition: information
 owner: unassigned
+aliases: []
+disposition: information
 due:
+period:
+supersedes: []
+findings: []
+decisions: []
+questions: []
+actions: []
+sources: []
 ---
 # Engagement debrief
 
@@ -25,3 +33,6 @@ and missed checks honestly. This vault is the complete record; keep full notes a
 If a Notion destination is separately configured, publish only permitted summaries and complete
 debriefs to it after the required review.
 Generalized lessons need contextual and permission review before cross-engagement reuse.
+
+## Graph links
+List the period's new `findings`, `decisions`, `questions` and `actions`, and the `sources` reviewed.

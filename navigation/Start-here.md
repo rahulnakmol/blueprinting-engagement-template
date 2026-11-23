@@ -1,5 +1,7 @@
 **Working material — not a client-approved baseline.**
 
+This vault is the engagement's complete record and knowledge graph. Read [Knowledge graph](Knowledge-graph.md) first: it explains the node kinds, how links are recorded, the Graph view setup and the views that show gaps.
+
 ## Resume
 Resume the explicitly named engagement in Blueprinting. Use the active bundle path it reports, not the newest-looking folder. Resolve pending operations, changed inputs and policy gaps before relying on conclusions.
 

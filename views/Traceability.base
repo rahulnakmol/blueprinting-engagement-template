@@ -1,0 +1,93 @@
+filters:
+  and:
+    - 'file.inFolder("notes")'
+    - 'file.ext == "md"'
+    - 'note.status != "superseded"'
+formulas:
+  evidence: 'list(note.sources).filter(value).length + list(note.findings).filter(value).length'
+properties:
+  note.owner:
+    displayName: Accountable role
+  formula.evidence:
+    displayName: Evidence links
+views:
+  - type: table
+    name: Goals
+    filters:
+      and:
+        - 'note.kind == "goal"'
+    order:
+      - file.name
+      - note.goal_type
+      - note.metric
+      - note.baseline
+      - note.target
+      - note.target_date
+      - note.owner
+    columnSize:
+      file.name: 300
+      note.metric: 200
+  - type: table
+    name: Requirements
+    filters:
+      and:
+        - 'note.kind == "requirement"'
+    groupBy:
+      property: note.fit
+      direction: ASC
+    order:
+      - file.name
+      - note.priority
+      - note.req_type
+      - note.goals
+      - note.processes
+      - formula.evidence
+      - note.status
+    columnSize:
+      file.name: 300
+      formula.evidence: 130
+  - type: table
+    name: Decisions
+    filters:
+      and:
+        - 'note.kind == "decision"'
+    order:
+      - file.name
+      - note.disposition
+      - note.stakeholders
+      - note.requirements
+      - note.due
+      - note.status
+      - note.record
+    columnSize:
+      file.name: 300
+  - type: table
+    name: Deliverables
+    filters:
+      and:
+        - 'note.kind == "deliverable"'
+    order:
+      - file.name
+      - note.format
+      - note.version
+      - note.stakeholders
+      - note.requirements
+      - note.decisions
+      - note.record
+    columnSize:
+      file.name: 300
+  - type: table
+    name: Estimates
+    filters:
+      and:
+        - 'note.kind == "estimate"'
+    order:
+      - file.name
+      - note.unit
+      - note.low
+      - note.likely
+      - note.high
+      - note.confidence
+      - note.requirements
+    columnSize:
+      file.name: 300
