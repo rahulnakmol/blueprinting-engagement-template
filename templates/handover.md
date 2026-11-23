@@ -1,9 +1,18 @@
 ---
 kind: handover
 status: open
-disposition: review
 owner: unassigned
+aliases: []
+disposition: review
 due:
+supersedes: []
+requirements: []
+decisions: []
+deliverables: []
+roles: []
+issues: []
+dependencies: []
+actions: []
 ---
 # Functional handover and kickoff readiness
 
@@ -22,3 +31,6 @@ Name workstream owners, business roles, handoff recipients and unresolved author
 State exceptions, cutover/business-readiness dependencies, knowledge transfer and open issues.
 Every unresolved item needs an accepting owner and explicit impact; do not hide gaps in a deck.
 Reconcile child workstream findings against parent outcomes before claiming completeness.
+
+## Graph links
+List the baseline `requirements` and `decisions`, handed-over `deliverables`, receiving `roles`, and the open `issues`, `dependencies` and `actions` the receiving team inherits.

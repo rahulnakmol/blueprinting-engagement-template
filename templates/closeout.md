@@ -1,9 +1,17 @@
 ---
 kind: closeout
 status: open
-disposition: review
 owner: unassigned
+aliases: []
+disposition: review
 due:
+outcome: unknown
+supersedes: []
+goals: []
+decisions: []
+deliverables: []
+actions: []
+lessons: []
 ---
 # Closeout and continuing commitments
 
@@ -22,3 +30,6 @@ opportunity is not proof that its obligations were withdrawn or its client data 
 Record what to repeat/change, supporting evidence and contextual limits. Review proposed
 generalized lessons for cross-client reuse. Record the agreed retention/archive review and
 who may authorize it; preserve material needed for outstanding commitments.
+
+## Graph links
+List the `goals` assessed, final `decisions`, delivered `deliverables`, continuing `actions` and the `lessons` recorded.

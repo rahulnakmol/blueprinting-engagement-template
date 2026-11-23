@@ -1,0 +1,149 @@
+filters:
+  and:
+    - 'file.inFolder("notes")'
+    - 'file.ext == "md"'
+    - 'note.status != "closed"'
+    - 'note.status != "superseded"'
+formulas:
+  evidence: 'list(note.sources).filter(value).length + list(note.findings).filter(value).length'
+  goal_links: 'list(note.goals).filter(value).length'
+  source_links: 'list(note.sources).filter(value).length'
+properties:
+  note.owner:
+    displayName: Accountable role
+  note.due:
+    displayName: Agreed date
+views:
+  - type: table
+    name: Requirements without evidence
+    filters:
+      and:
+        - 'note.kind == "requirement"'
+        - 'formula.evidence == 0'
+    order:
+      - file.name
+      - note.priority
+      - note.goals
+      - note.owner
+    columnSize:
+      file.name: 300
+  - type: table
+    name: Requirements without a goal
+    filters:
+      and:
+        - 'note.kind == "requirement"'
+        - 'formula.goal_links == 0'
+    order:
+      - file.name
+      - note.priority
+      - note.processes
+      - note.owner
+    columnSize:
+      file.name: 300
+  - type: table
+    name: Findings without a source
+    filters:
+      and:
+        - 'note.kind == "finding"'
+        - 'formula.source_links == 0'
+    order:
+      - file.name
+      - note.speaker
+      - note.evidence
+    columnSize:
+      file.name: 300
+      note.speaker: 200
+  - type: table
+    name: Findings to verify
+    filters:
+      and:
+        - 'note.kind == "finding"'
+        - or:
+            - 'note.evidence == "unverified"'
+            - 'note.evidence == "contested"'
+    groupBy:
+      property: note.evidence
+      direction: ASC
+    order:
+      - file.name
+      - note.speaker
+      - note.sources
+      - note.contradicts
+    columnSize:
+      file.name: 300
+      note.speaker: 200
+  - type: table
+    name: Open items without an owner
+    filters:
+      and:
+        - or:
+            - 'note.kind == "decision"'
+            - 'note.kind == "question"'
+            - 'note.kind == "risk"'
+            - 'note.kind == "assumption"'
+            - 'note.kind == "issue"'
+            - 'note.kind == "dependency"'
+            - 'note.kind == "action"'
+        - or:
+            - '!note.owner'
+            - 'note.owner == "unassigned"'
+    groupBy:
+      property: note.kind
+      direction: ASC
+    order:
+      - file.name
+      - note.affects
+      - note.due
+    columnSize:
+      file.name: 300
+  - type: table
+    name: Overdue
+    filters:
+      and:
+        - '!note.due.isEmpty()'
+        - 'note.due < today()'
+    order:
+      - file.name
+      - note.kind
+      - note.owner
+      - note.due
+    columnSize:
+      file.name: 300
+      note.kind: 160
+  - type: table
+    name: Open RAID log
+    filters:
+      or:
+        - 'note.kind == "risk"'
+        - 'note.kind == "assumption"'
+        - 'note.kind == "issue"'
+        - 'note.kind == "dependency"'
+    groupBy:
+      property: note.kind
+      direction: ASC
+    order:
+      - file.name
+      - note.likelihood
+      - note.impact
+      - note.severity
+      - note.affects
+      - note.owner
+      - note.due
+    columnSize:
+      file.name: 300
+  - type: table
+    name: Open questions
+    filters:
+      and:
+        - 'note.kind == "question"'
+    groupBy:
+      property: note.question_type
+      direction: ASC
+    order:
+      - file.name
+      - note.affects
+      - note.stakeholders
+      - note.owner
+      - note.due
+    columnSize:
+      file.name: 300

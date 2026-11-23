@@ -1,9 +1,18 @@
 ---
 kind: functional-design
 status: open
-disposition: review
 owner: unassigned
+aliases: []
+disposition: review
 due:
+supersedes: []
+goals: []
+processes: []
+requirements: []
+roles: []
+systems: []
+decisions: []
+questions: []
 ---
 # Functional design
 
@@ -26,3 +35,6 @@ Track sub-mission findings, unresolved parent criteria, assumptions and missing 
 Specify functional UAT examples that distinguish correct from plausibly wrong outcomes.
 Written confirmation must cover the exact version and scope from the named client authority.
 A completed diagram, green checklist or source hash is not functional acceptance.
+
+## Graph links
+The table above summarizes nodes; it does not replace them. Each row should have its own `requirement` note. List the design's `goals`, to-be `processes`, `requirements`, `roles`, `systems`, the `decisions` it depends on and open `questions`.

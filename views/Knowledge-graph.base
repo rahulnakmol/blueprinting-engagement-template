@@ -1,0 +1,118 @@
+filters:
+  and:
+    - 'file.inFolder("notes")'
+    - 'file.ext == "md"'
+formulas:
+  links: 'file.links.length'
+properties:
+  note.kind:
+    displayName: Kind
+  note.status:
+    displayName: Status
+  note.owner:
+    displayName: Accountable role
+  formula.links:
+    displayName: Outgoing links
+views:
+  - type: table
+    name: All nodes
+    groupBy:
+      property: note.kind
+      direction: ASC
+    order:
+      - file.name
+      - note.status
+      - note.owner
+      - formula.links
+    columnSize:
+      file.name: 300
+  - type: table
+    name: Process map
+    filters:
+      and:
+        - 'note.kind == "process"'
+    groupBy:
+      property: note.state
+      direction: ASC
+    order:
+      - file.name
+      - note.parent
+      - note.replaces
+      - note.roles
+      - note.systems
+      - note.status
+    columnSize:
+      file.name: 300
+  - type: table
+    name: Capabilities
+    filters:
+      and:
+        - 'note.kind == "capability"'
+    groupBy:
+      property: note.level
+      direction: ASC
+    order:
+      - file.name
+      - note.parent
+      - note.maturity_current
+      - note.maturity_target
+      - note.systems
+    columnSize:
+      file.name: 300
+  - type: table
+    name: Stakeholders
+    filters:
+      or:
+        - 'note.kind == "stakeholder"'
+        - 'note.kind == "role"'
+        - 'note.kind == "organization"'
+    groupBy:
+      property: note.kind
+      direction: ASC
+    order:
+      - file.name
+      - note.title
+      - note.authority
+      - note.influence
+      - note.interest
+      - note.organizations
+    columnSize:
+      file.name: 300
+      note.title: 200
+      note.authority: 200
+  - type: table
+    name: Systems and data
+    filters:
+      or:
+        - 'note.kind == "system"'
+        - 'note.kind == "data-object"'
+    groupBy:
+      property: note.kind
+      direction: ASC
+    order:
+      - file.name
+      - note.system_type
+      - note.module
+      - note.lifecycle
+      - note.systems
+      - note.sensitivity
+    columnSize:
+      file.name: 300
+  - type: table
+    name: Evidence
+    filters:
+      or:
+        - 'note.kind == "source"'
+        - 'note.kind == "finding"'
+    groupBy:
+      property: note.kind
+      direction: ASC
+    order:
+      - file.name
+      - note.source_type
+      - note.claim_type
+      - note.evidence
+      - note.sources
+      - note.location
+    columnSize:
+      file.name: 300

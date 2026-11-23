@@ -1,0 +1,22 @@
+filters:
+  and:
+    - 'file.inFolder("notes")'
+    - 'file.ext == "md"'
+    - 'file.hasLink(this.file)'
+properties:
+  note.kind:
+    displayName: Kind
+  note.status:
+    displayName: Status
+views:
+  - type: table
+    name: Linked from this note
+    groupBy:
+      property: note.kind
+      direction: ASC
+    order:
+      - file.name
+      - note.status
+      - note.owner
+    columnSize:
+      file.name: 300

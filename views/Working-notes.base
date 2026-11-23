@@ -2,6 +2,17 @@ filters:
   and:
     - 'file.inFolder("notes")'
     - 'file.ext == "md"'
+    - or:
+        - 'note.kind == "opportunity"'
+        - 'note.kind == "rfp"'
+        - 'note.kind == "workshop"'
+        - 'note.kind == "functional-design"'
+        - 'note.kind == "decision"'
+        - 'note.kind == "handover"'
+        - 'note.kind == "debrief"'
+        - 'note.kind == "closeout"'
+        - 'note.kind == "question"'
+        - 'note.kind == "action"'
 properties:
   note.owner:
     displayName: Accountable role
@@ -17,6 +28,7 @@ views:
     filters:
       and:
         - 'note.status != "closed"'
+        - 'note.status != "superseded"'
     order:
       - file.name
       - note.kind

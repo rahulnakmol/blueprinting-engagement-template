@@ -1,9 +1,16 @@
 ---
 kind: workshop
 status: open
-disposition: action
 owner: unassigned
+aliases: []
+disposition: action
 due:
+held:
+supersedes: []
+stakeholders: []
+sources: []
+questions: []
+processes: []
 ---
 # Workshop and evidence record
 
@@ -26,3 +33,6 @@ negation, business terms and alleged decisions against source spans or written c
 Record disagreements without choosing the most senior speaker as truth. Identify the named
 authority who can decide, the exact question, receiving owner and next-working-day response.
 Keep rich notes; derive a full daily debrief and permitted summary without discarding detail.
+
+## Graph links
+List attendees in `stakeholders` and the processes discussed in `processes`. After the session, create one `source` for each transcript, recording or note set and one `finding` per material claim; list the sources here and open `questions` for every follow-up.

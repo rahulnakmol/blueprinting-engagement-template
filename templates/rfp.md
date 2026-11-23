@@ -1,9 +1,20 @@
 ---
 kind: rfp
 status: open
-disposition: decision
 owner: unassigned
+aliases: []
+disposition: decision
 due:
+record:
+supersedes: []
+sources: []
+requirements: []
+questions: []
+risks: []
+assumptions: []
+estimates: []
+findings: []
+deliverables: []
 ---
 # RFP qualification and response
 
@@ -25,3 +36,6 @@ client responsibilities and estimation confidence. Do not invent references or c
 ## Submission readiness
 Record unresolved obligations, required approvals, version consistency and the recipient-safe
 deliverable selection. Drafting a response does not authorize submission or external sharing.
+
+## Graph links
+Register the issued RFP and each addendum as `sources`. For each mandatory or scored obligation, create a `finding` that quotes it (obligation ID and clause in `location`) and a `requirement` that cites that finding; list both here in `findings` and `requirements`. Link clarifications as `questions`, bid `risks`, `assumptions` and `estimates`, and the response `deliverables`. A new addendum reopens the requirements it changes.

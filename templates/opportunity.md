@@ -1,9 +1,19 @@
 ---
 kind: opportunity
 status: open
-disposition: review
 owner: unassigned
+aliases: []
+disposition: review
 due:
+supersedes: []
+stakeholders: []
+organizations: []
+goals: []
+findings: []
+sources: []
+risks: []
+estimates: []
+deliverables: []
 ---
 # Opportunity assessment
 
@@ -26,3 +36,6 @@ confidence. Link reproducible estimate inputs; no implied fixed price, tax or be
 ## Follow-through
 Record qualification gaps, the next workshop/questions and owned next actions. Preserve history
 if won, lost or paused. A pitch is not a client commitment or permission to contact them.
+
+## Graph links
+Link sponsors and buyers in `stakeholders`, the client entities in `organizations`, business drivers in `goals`, supporting findings and sources, pursuit risks, the effort `estimates` and the proposal `deliverables`. Create those nodes rather than describing them only here.
